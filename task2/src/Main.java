@@ -17,27 +17,31 @@ public class Main {
         double average = 0;
         double smallest = 0;
         //todo дописать логику программы ниже.
-        if(first > second && first > third) {
-            greatest = first;
-        } else if (first < second && first < third) {
-            smallest = first;
-        } else {
-            average = third;
-        }
-        if(first < second && second > third) {
-            greatest = second;
-        } else if (second < first && second < third) {
-            smallest = second;
-        } else {
-            average = second;
-        }
-        if(first < third && second < third) {
-            greatest = third;
-        } else if (second > third && third < first) {
-            smallest = third;
-        } else  {
-            average = third;
-        }
+        greatest = first > second && first > third ? first : second > third ? second : third;
+        smallest = first < second && first < third ? first : second < third ? second : third;
+        average = (first > second && first < third) || (first < second && first > third) ? first : ( second > first && second < third) || (second < first && second > third) ? second : third;
+
+//        if(first > second && first > third) {
+//            greatest = first;
+//        } else if (first < second && first < third) {
+//            smallest = first;
+//        } else {
+//            average = third;
+//        }
+//        if(first < second && second > third) {
+//            greatest = second;
+//        } else if (second < first && second < third) {
+//            smallest = second;
+//        } else {
+//            average = second;
+//        }
+//        if(first < third && second < third) {
+//            greatest = third;
+//        } else if (second > third && third < first) {
+//            smallest = third;
+//        } else  {
+//            average = third;
+//        }
         //todo
         System.out.println("Наибольший вес: " + greatest);
         System.out.println("Средний вес: " + average);
